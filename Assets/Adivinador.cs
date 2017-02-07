@@ -1,21 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
+﻿// Utiliza las siguientes bibliotecas para poder funcionar correctamente
+using UnityEngine;           // Máquina de juegos
+using System.Collections;    // Colecciones
+using UnityEngine.UI;        // Interfaz de usuario de la máquina de juegos
 
 public class Adivinador : MonoBehaviour {
+	// Atributos (variables dentro de una clase)
+	// [Alcance] TipoDeDatoObjeto NombreVariable [ValorInicial]
 	int min = 1;
 	int max = 1000;
 	int guess = 500;
+
+	// Estos atributos son públicos
 	public Text myText;
 	public int attempts = 5;
 
 	// Use this for initialization
+	// Esto es un método
+	// [Alcance] TipoDeDatoObjeto NombreMetodo([Parámetros]) { ... }
 	void Start () {
-		ResetGame ();
+		ResetGame ();  // Toda línea debe terminar con punto y coma (;)
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// if (PruebaLógica) { ... Verdadero ... } [ else { ... Falso ... } ]
+
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			//print ("Up arrow was pressed");
 			GuessHigher();
@@ -31,6 +40,11 @@ public class Adivinador : MonoBehaviour {
 				}
 			}
 		}
+
+		/*
+		if (5 > 4)
+			min = 0;
+		*/
 	}
 
 	public void GuessHigher() {
